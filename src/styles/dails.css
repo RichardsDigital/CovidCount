@@ -1,0 +1,48 @@
+
+
+.dailsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    height: 140px;
+    width: 85%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 40px 20px 20px 20px;
+}
+
+.dailBox {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.dailBox h3 {
+    justify-self: center;
+    align-self: center;
+}
+
+.innerBox {
+    position: relative;
+    display: grid;
+    grid-row: 2/3;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.144);
+}
+
+.innerBox p {
+    position: relative;
+    align-self: center;
+
+    text-align: center;
+}

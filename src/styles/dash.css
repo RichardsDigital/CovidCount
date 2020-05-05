@@ -1,0 +1,9 @@
+
+.dashBody {
+    position: absolute;
+    top: 100px;
+    left: 24%;
+    width: 76%;
+    background-color: rgb(202, 202, 202);
+    display: grid;
+}

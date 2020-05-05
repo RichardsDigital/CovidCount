@@ -1,0 +1,23 @@
+.logo {
+    display: grid;
+    height: 120px;
+    width: 100%;
+}
+
+.logo h3 {
+    color: white;
+    margin: 20px 0 0 30px;
+}
+
+.panelBoxWrapper {
+    height: 85px;
+    width: 100%;
+    display: grid;
+}
+
+.panelBoxWrapper p {
+    color: white;
+    align-self: center;
+    padding-left: 30px;
+    text-align: left;
+}
