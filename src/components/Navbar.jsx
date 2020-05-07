@@ -34,7 +34,7 @@ class Navbar extends Component {
         }
 
         this.date = {
-            year: this.twoDigit(this.now.getFullYear()), month: this.twoDigit(this.now.getMonth()), day: this.twoDigit(this.now.getDay())
+            year: this.twoDigit(this.now.getFullYear()), month: this.twoDigit(this.now.getMonth()), day: this.twoDigit(this.now.getDay() -1)
         }
     }
 
