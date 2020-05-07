@@ -43,6 +43,12 @@ class Navbar extends Component {
         this.handleClick();
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props) {
+            this.handleClick();
+        }
+    }
+
     // Get total
     // https://api.covid19api.com/total/dayone/country/south-africa
     // properties: confirmed, deaths, recovered
@@ -150,23 +156,28 @@ class Navbar extends Component {
     }
 
     render() {
+        
         return(
             <div>
-            <div>
-                <div className="navbar">
-                    <div className="medianCarrier">
-                        <div className="gridify">
-                            <div className="locationHeader">
-                                <h3>Location:</h3>
+                <div>
+                    <div className="navbar">
+                        <div className="medianCarrier">
+                            <div className="gridify">
+                                <div className="locationHeader">
+                                    <h3>Location:</h3>
+                                </div>
+                                <input className="searchBar" type="text" placeholder="Enter Location" onChange={this.getInput} value={this.state.userInput}/>
+                                <button className="button" onClick={this.handleClick}>Submit</button>
                             </div>
-                            <input className="searchBar" type="text" placeholder="Enter Location" onChange={this.getInput} value={this.state.userInput}/>
-                            <button className="button" onClick={this.handleClick}>Submit</button>
                         </div>
                     </div>
                 </div>
-            </div>
+
                 <Dash 
+                    selectedPage = {this.props.selectedPage}
                     userSubmitted = {this.state.userSubmitted}
+
+                    nhsData = {this.props.nhsData}
                 
                     confirmed = {this.state.confirmed} 
                     deaths = {this.state.deaths} 
