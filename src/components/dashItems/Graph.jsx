@@ -44,7 +44,6 @@ class Graph extends Component {
             }
           });
 
-
       }
   }
     

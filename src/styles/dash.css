@@ -7,3 +7,36 @@
     background-color: rgb(202, 202, 202);
     display: grid;
 }
+
+.nhsInfoBox {
+    justify-self: center;
+    position: relative;
+    padding: 30px;
+    margin: 30px 0 30px 0;
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.nhsInfoBox a, .nhsInfoBox p, .nhsInfoBox li {
+    margin: 20px;
+    text-decoration: none;
+}
+
+.nhsInfoBox li {
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.borderArea {
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 0 10px 0;
+}
+
+.pageHeader {
+    position: relative;
+    left: 7%;
+    padding: 30px 0 30px 0;
+}
