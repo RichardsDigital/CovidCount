@@ -6,6 +6,9 @@ import SidePanel from './components/SidePanel';
 // Handle NHS API
 // Pass props to sidepanel
 
+
+// Articles (Springer Nature) API key: aac67b71e0aa832e6ea79a683ab75728
+
 class App extends Component {
 
   constructor(props) {

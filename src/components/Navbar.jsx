@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Dash from './Dash';
+import findCountry from './searchFilter/countries';
 import '../styles/navbar.css';
 import axios from 'axios';
 
@@ -10,7 +11,8 @@ class Navbar extends Component {
         this.getInput = this.getInput.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.state = {
-            userInput: 'United Kingdom', 
+            userInput: 'United Kingdom',
+            userReturnedInput: '', 
             countryTotal: '',
             countryFromTo: '',
 
@@ -63,15 +65,20 @@ class Navbar extends Component {
     }
 
     handleClick() {
+
+        this.setState({userReturnedInput: findCountry(this.state.userInput, true)}, () => {
+
+            const {year, month, day} = this.date;
+
+            this.setState({
+                userSubmitted: this.state.userReturnedInput,
+                countryTotal: `https://api.covid19api.com/total/dayone/country/${this.state.userReturnedInput}`,
+                countryFromTo: `https://api.covid19api.com/total/country/${this.state.userReturnedInput}/status/confirmed?from=2020-01-01T00:00:00Z&to=${year}-${month}-${day}T00:00:00Z`
+    
+            }, () => {this.fetchData(this.state.countryTotal, this.state.countryFromTo)});
+
+        })
         
-        const {year, month, day} = this.date;
-
-        this.setState({
-            userSubmitted: this.state.userInput,
-            countryTotal: `https://api.covid19api.com/total/dayone/country/${this.state.userInput}`,
-            countryFromTo: `https://api.covid19api.com/total/country/${this.state.userInput}/status/confirmed?from=2020-01-01T00:00:00Z&to=${year}-${month}-${day}T00:00:00Z`
-
-        }, () => {this.fetchData(this.state.countryTotal, this.state.countryFromTo)});
     }
 
     fetchData(ct, cft) {

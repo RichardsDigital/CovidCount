@@ -9,6 +9,10 @@ class Dash extends Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.render();
+    }
+
     render() {
 
         if (this.props.selectedPage === 'stats') {
@@ -30,14 +34,15 @@ class Dash extends Component {
             )
         }
 
-        if (this.props.selectedPage === 'nhs') {
+        if (this.props.selectedPage === 'nhs' && this.props.nhsData) {
 
             return (
                 <div className="dashBody">
 
                     <h1 className="pageHeader">NHS Advice</h1>
 
-                    {(this.props.nhsData).map((value, index) => {
+                    {
+                        (this.props.nhsData).map((value, index) => {
                         return (
                             <div className="nhsInfoBox">
                                 <p> <b>{value.description}</b></p>

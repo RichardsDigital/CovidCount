@@ -28,7 +28,7 @@ class SidePanel extends Component {
                          <p>Country Statistics</p>
                     </div>
 
-                    <div onClick={() => this.handleClick('nhs')} className="panelBoxWrapper" style= {{ backgroundColor: 'blue' }}>
+                    <div onClick={() => this.handleClick('nhs')} className="panelBoxWrapper" style= {{ backgroundColor: 'none' }}>
                          <p>NHS Advice</p>
                     </div>
 
