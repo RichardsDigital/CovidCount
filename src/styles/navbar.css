@@ -10,6 +10,16 @@
     display: grid;
 }
 
+.mainHeader {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+}
+
 .medianCarrier {
     position: relative;
     align-self: center;

@@ -1,6 +1,4 @@
 
-
-
 const countries = [
             {name: 'Afghanistan', code: 'AF'}, 
             {name: 'Åland Islands', code: 'AX'}, 
@@ -253,9 +251,19 @@ function findCountry(search, enter) {
 
     if (enter === true) {
 
+        const toTitleCase = (phrase) => {
+            return phrase
+              .toLowerCase()
+              .split(' ')
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(' ');
+          };
+          
+          let request = toTitleCase(search);
+
         countries.forEach((country) => {
 
-            if ((country.name).includes(search) === true) {
+            if ((country.name).includes(request) === true) {
                 searchResults.push(country.name);
             }
     

@@ -82,6 +82,7 @@ class Navbar extends Component {
     }
 
     fetchData(ct, cft) {
+
         // confirmed, deaths, recovered
         axios.get(ct)
         .then((res) => {this.getTotalCDR(res.data)})
@@ -92,11 +93,22 @@ class Navbar extends Component {
     }
 
     getTotalCDR(data) {
+        if (data.length !== 0) {
+
         this.setState({
             confirmed: data[data.length -1].Confirmed,
             deaths: data[data.length -1].Deaths,
             recovered: data[data.length -1].Recovered
         })
+        }
+
+        else {
+            this.setState({
+                confirmed: 'N/A',
+                deaths: 'N/A',
+                recovered: 'N/A'
+            })
+        }
     }
 
     getCasesPerMonth(data) {
@@ -143,6 +155,8 @@ class Navbar extends Component {
             writtenMonths.push(this.findMonth(date));
         });
 
+        // writtenMonths[writtenMonths.length -1] = 'Today';
+
         this.setState({splitMonths: writtenMonths, splitCases: orderedCases});
     }
 
@@ -169,6 +183,9 @@ class Navbar extends Component {
                 <div>
                     <div className="navbar">
                         <div className="medianCarrier">
+                            {/* <div className="mainHeader">
+                                <h2>Covid-19 | United Kingdom</h2>
+                            </div>   */}
                             <div className="gridify">
                                 <div className="locationHeader">
                                     <h3>Location:</h3>
